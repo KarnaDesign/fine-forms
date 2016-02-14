@@ -19,26 +19,26 @@ if($completed === "true")
         <fieldset>
             <legend>The basics</legend>
             <div class="formInput">
-                <p><label for="firstName">First name </label></p>
-                <p><input type="text" name="firstName" id="firstName"/></p>
+                <p><label for="firstName">First name* </label></p>
+                <p><input type="text" name="firstName" id="firstName" required /></p>
             </div>
             <div class="formInput">
-                <p><label for="lastName">Last name</label></p>
-                <p><input type="text" name="lastName" id="lastName"/></p>
+                <p><label for="lastName">Last name*</label></p>
+                <p><input type="text" name="lastName" id="lastName" required /></p>
             </div>
 
             <div class="formInput">
-                <p><label for="age">Age </label></p>
-                <p><input type="number" name="age" id="age" min="1" max="99"/></p>
+                <p><label for="age">Age*</label></p>
+                <p><input type="number" name="age" id="age" min="1" max="99" required /></p>
             </div>
             <div class="formInput">
-                <p><label for="email">E-mail</label></p>
-                <p><input type="email" name="email" id="email"/></p>
+                <p><label for="email">E-mail*</label></p>
+                <p><input type="email" name="email" id="email" required /></p>
             </div>
             <div class="formInput">
-                <p><label for="gender">Gender</label></p>
+                <p><label for="gender">Gender*</label></p>
                 <p>
-                    <select name="gender" id="gender">
+                    <select name="gender" id="gender" required>
                         <option value="man">Man</option>
                         <option value="woman">Woman</option>
                     </select>
@@ -49,9 +49,9 @@ if($completed === "true")
         <fieldset>
             <legend>The important stuff</legend>
             <div class="incarnationContainer">
-                <h4>Favourite incarnation</h4>
+                <h4>Favourite incarnation*</h4>
                 <p><select name="incarnation" id="incarnation">
-                        <option value="The First Doctor, William Hartnell" id="first">The First Doctor, William Hartnell</option>
+                        <option value="The First Doctor, William Hartnell" id="first" selected>The First Doctor, William Hartnell</option>
                         <option value="The Second Doctor, Patrick Troughton" id="second">The Second Doctor, Patrick Troughton</option>
                         <option value="The Third Doctor, Jon Pertwee" id="third">The Third Doctor, Jon Pertwee</option>
                         <option value="The Fourth Doctor, Tom Baker" id="fourth">The Fourth Doctor, Tom Baker</option>
@@ -69,7 +69,7 @@ if($completed === "true")
             <div id="tagLine" class="clearFix">
                 <h4>Choose favourite tagline(s)</h4>
                 <div class="leftTagLine">
-                    <p><input type="checkbox" name="tagLine[]" id="tagLine1" value="Don't Blink" checked><label
+                    <p><input type="checkbox" name="tagLine[]" id="tagLine1" value="Don't Blink"><label
                             for="tagLine1">Don't
                             Blink</label></p>
                     <p><input type="checkbox" name="tagLine[]" id="tagLine2" value="Silence Will Fall"><label
@@ -109,7 +109,7 @@ if($completed === "true")
             </div>
 
             <div id="moisturize">
-                <h4>Do you need to be moisturized?</h4>
+                <h4>Do you need to be moisturized?*</h4>
                 <p><input type="radio" name="moisturize" id="moisturizedYes" value="yes" checked><label
                         for="moisturizedYes">Yes please!</label></p>
                 <p><input type="radio" name="moisturize" id="moisturizedNo" value="no"><label for="moisturizedNo">No
