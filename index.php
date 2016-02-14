@@ -15,7 +15,7 @@ if($completed === "true")
     <header><h1>Application - the Doctor's companion</h1>
         <h3>Fill in this form, please!</h3></header>
 
-    <form action="formhandler.php" method="post" name="companion-application-form" enctype="multipart/form-data">
+    <form action="formhandler.php" method="post" name="companion-application-form" id="applicationForm" autocomplete="off">
         <fieldset>
             <legend>The basics</legend>
             <div class="formInput">
