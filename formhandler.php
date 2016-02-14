@@ -17,31 +17,38 @@ $moisturize = $_POST["moisturize"];
 </header>
 
 <div id="applicationSummary">
-    <p>So your name is <?php echo($name); ?> and you're
-        <?php echo($age); ?> years old.</p>
-    <p>You've entered the following e-mail: <?php echo($email); ?>. Please make sure it's the correct one.</p>
-    <p>You claim to be a <?php echo($gender); ?>. Please make sure this information is correct.</p>
-    <p>When it comes to the important stuff, you've chosen <?php echo($incarnation); ?>, as your favourite
+    <p>So your name is <span class="formResult"><?php echo($name); ?></span> and you're
+        <span class="formResult"><?php echo($age); ?></span> years old.</p>
+    <p>You've entered the following e-mail: <span class="formResult"><?php echo($email); ?></span>. Please make sure
+        it's the correct one.</p>
+    <p>You claim to be a <span class="formResult"><?php echo($gender); ?></span>. Please make sure this information is
+        correct.</p>
+    <p>When it comes to the important stuff, you've chosen <span class="formResult"><?php echo($incarnation); ?></span>,
+        as your favourite
         incarnation of the Doctor. Are you sure?</p>
     <p>Your favourite tag line(s) are as follows: </p>
     <ul>
         <?php
         for ($i = 0; $i < count($tagLines); $i++) {
-            echo("<li>" . $tagLines[$i] . "</li>");
+            echo("<li class='formResult'>" . $tagLines[$i] . "</li>");
         }
         ?>
     </ul>
 
     <?php if ($moisturize === "yes") { ?>
-        <p>You chose to be moisturized. Please bring your own hose.</p>
+        <p>You <span class="formResult">chose to be moisturized</span>. Please bring your own hose.</p>
     <?php } else { ?>
-        <p>You declined the offer of being moisturized. To each his/her own...</p>
+        <p>You <span class="formResult">declined the offer of being moisturized</span>. To each his/her own...</p>
     <?php } ?>
 </div>
 
-<div id="applicationApproval">
-    <p><a href="index.php?completed=true">Yes! Geronimo!</a></p>
-    <p><a href="index.php">No, wait... take me back!</a></p>
+<p id="sendQuestion">Is this the information you want to send on to the Tardis?</p>
+
+<div id="outerApplicationApproval">
+    <div id="applicationApproval">
+        <p><a href="index.php?completed=true">Yes! Geronimo!</a></p>
+        <p><a href="index.php">No, wait... take me back!</a></p>
+    </div>
 </div>
 
 <?php

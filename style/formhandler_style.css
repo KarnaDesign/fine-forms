@@ -1,0 +1,73 @@
+*
+{
+    margin: 0;
+    padding:0;
+}
+
+#applicationSummary
+{
+    margin: 3em;
+    border: 2px dotted #000;
+    padding: 2em;
+}
+
+#applicationSummary p
+{
+    margin-top: 1.5em;
+    font-weight: bold;
+}
+
+#applicationSummary li
+{
+    list-style-type: none;
+    font-weight: bold;
+}
+
+#sendQuestion
+{
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#outerApplicationApproval
+{
+    text-align: center;
+}
+
+#applicationApproval
+{
+    margin-top: 3em;
+    display: inline-block;
+}
+
+#applicationApproval p:first-child
+{
+    border-bottom: 1px solid #000;
+    padding-bottom: 1em;
+}
+
+#applicationApproval p:last-child
+{
+    padding-top: 1em;
+}
+
+#applicationApproval a
+{
+    text-decoration:none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+#applicationApproval a:hover
+{
+    color: blue;
+}
+
+.formResult
+{
+    font-style: italic;
+    color: #A80C03;
+}
