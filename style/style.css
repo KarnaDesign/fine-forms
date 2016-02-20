@@ -66,6 +66,7 @@ legend
     background-color: #FFF;
     box-shadow: 0 0 0.7em #000;
     padding-bottom: 2em;
+    position: relative;
 }
 
 button
@@ -106,14 +107,11 @@ label
     font-weight: bold;
 }
 
-.leftTagLine, .rightTagLine
+#tagLine label
 {
-    width: 50%;
-    float: left;
+    font-weight: normal;
 }
 
-.leftTagLine label,
-.rightTagLine label,
 #moisturize label
 {
     font-weight: normal;
@@ -130,6 +128,7 @@ input[type="checkbox"], input[type="radio"]
     margin-bottom: 2em;
 }
 
+
 .clearFix:after
 {
     content:"";
@@ -140,4 +139,17 @@ input[type="checkbox"], input[type="radio"]
 .incarnationContainer
 {
     margin-bottom: 2em;
+}
+
+.notification
+{
+    border: 2px solid darkgreen;
+    background-color: rgb(178, 232, 160);
+    width: 50%;
+    position: absolute;
+    top: -1em;
+    z-index: 10;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 0 1em #000;
 }
