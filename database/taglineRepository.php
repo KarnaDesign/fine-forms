@@ -8,7 +8,7 @@
             die("Connection failed: " . $connection->connect_error);
         }
 
-        $sql = "SELECT id, quote FROM tagline";
+        $sql = "SELECT id, quote FROM tagLine";
         $result = $connection->query($sql);
 
         $taglines = $result->fetch_all(MYSQLI_ASSOC); //Gets all rows from result as an associative array
@@ -32,7 +32,7 @@
             die("Connection failed: " . $connection->connect_error);
         };
 
-        $sql = "SELECT quote FROM tagline WHERE id = ?";
+        $sql = "SELECT quote FROM tagLine WHERE id = ?";
         $statement = $connection->prepare($sql);
         $statement->bind_param("i", $taglineId);
         $statement->execute();
