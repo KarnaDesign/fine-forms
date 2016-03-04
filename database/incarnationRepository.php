@@ -28,7 +28,7 @@
             die("Connection failed: " . $connection->connect_error);
         };
 
-        $sql = "SELECT doctor, image_url FROM incarnation WHERE id = ?"; //Using ? as a placeholder for the actual id
+        $sql = "SELECT doctor, information_url FROM incarnation WHERE id = ?"; //Using ? as a placeholder for the actual id
         $statement = $connection->prepare($sql); //Creating a statement
         $statement->bind_param("i", $doctorsID); //Making sure the selected id doesn't contain anything nasty
         $statement->execute();
