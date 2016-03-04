@@ -18,7 +18,7 @@ if(isset($_POST["tagLine"])) {
 
 $doctorsInfo = getIncarnationById($connectionInfo, $doctorsID);
 $doctorsName = $doctorsInfo["name"]; //Get selected incarnation
-$doctorsImage = $doctorsInfo["url"]; //Get image of selected incarnation
+$doctorsLink = $doctorsInfo["url"]; //Get image of selected incarnation
 
 ?>
 
@@ -34,7 +34,8 @@ $doctorsImage = $doctorsInfo["url"]; //Get image of selected incarnation
         it's the correct one.</p>
     <p>You claim to be a <span class="formResult"><?php echo($gender); ?></span>. Please make sure this information is
         correct.</p>
-    <p>When it comes to the important stuff, you've chosen <span class="formResult"><?php echo($doctorsName); ?></span>,
+    <p>When it comes to the important stuff, you've chosen <span class="formResult"><a href="<?php echo($doctorsLink); ?>" target="_blank">
+    <?php echo($doctorsName); ?></a></span>,
         as your favourite
         incarnation of the Doctor. Are you sure?</p>
     <p>Your favourite tag line(s) are as follows: </p>
