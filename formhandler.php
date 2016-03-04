@@ -1,13 +1,24 @@
 <?php
 require_once("top.php");
+require_once("database/incarnationRepository.php");
+$connectionInfo = require_once("configuration/connectionInfo.php");
+require_once("database/taglineRepository.php");
 
 $name = $_POST["firstName"] . " " . $_POST["lastName"];
 $age = $_POST["age"];
 $email = $_POST["email"];
 $gender = $_POST["gender"];
-$incarnation = $_POST["incarnation"];
-$tagLines = $_POST["tagLine"];
+$doctorsID = $_POST["incarnation"];
 $moisturize = $_POST["moisturize"];
+
+$taglineIds = array();
+if(isset($_POST["tagLine"])) {
+    $taglineIds = $_POST["tagLine"];
+}
+
+$doctorsInfo = getIncarnationById($connectionInfo, $doctorsID);
+$doctorsName = $doctorsInfo["name"]; //Get selected incarnation
+$doctorsImage = $doctorsInfo["url"]; //Get image of selected incarnation
 
 ?>
 
@@ -23,14 +34,21 @@ $moisturize = $_POST["moisturize"];
         it's the correct one.</p>
     <p>You claim to be a <span class="formResult"><?php echo($gender); ?></span>. Please make sure this information is
         correct.</p>
-    <p>When it comes to the important stuff, you've chosen <span class="formResult"><?php echo($incarnation); ?></span>,
+    <p>When it comes to the important stuff, you've chosen <span class="formResult"><?php echo($doctorsName); ?></span>,
         as your favourite
         incarnation of the Doctor. Are you sure?</p>
     <p>Your favourite tag line(s) are as follows: </p>
     <ul>
         <?php
-        for ($i = 0; $i < count($tagLines); $i++) {
-            echo("<li class='formResult'>" . $tagLines[$i] . "</li>");
+        if(count($taglineIds) === 0)
+        {
+            echo "<em>Apparently you don't have any favourite taglines... How sad!</em>";
+        }
+        else {
+            for ($i = 0; $i < count($taglineIds); $i++) {
+                $quote = getTaglineById($connectionInfo, $taglineIds[$i]);
+                echo("<li class='formResult'>" . $quote . "</li>");
+            }
         }
         ?>
     </ul>

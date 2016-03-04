@@ -18,4 +18,30 @@
         return $taglines;
     }
 
+/**
+ * @param $connectionInfo   Database connection info
+ * @param $taglineIds   Array of selected taglines
+ */
+    function getTaglineById($connectionInfo, $taglineId)
+    {
+        $connection = new mysqli($connectionInfo["serverName"], $connectionInfo["username"], $connectionInfo["password"],
+            $connectionInfo["database"]);
+
+        if($connection->connect_error)
+        {
+            die("Connection failed: " . $connection->connect_error);
+        };
+
+        $sql = "SELECT quote FROM tagline WHERE id = ?";
+        $statement = $connection->prepare($sql);
+        $statement->bind_param("i", $taglineId);
+        $statement->execute();
+
+        $statement->bind_result($quote);
+        $statement->fetch();
+        $statement->close();
+
+        return $quote;
+    }
+
 ?>
